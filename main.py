@@ -6,7 +6,7 @@ import cv2
 import os
 
 main_dir = os.getcwd()
-art_dir = os.path.join(main_dir, 'artifact')
+output_dir = os.path.join(main_dir, 'output')
 
 # construct the argument parse and parse the arguments
 parser = argparse.ArgumentParser()
@@ -30,6 +30,6 @@ if args['predict']:
 	# check for a valid image path
 	if os.path.isfile(image_path):
 		import predict
-		predict.make_prediction(image_path, art_dir)
+		predict.make_prediction(image_path, output_dir)
 	else:
 		print('Please provide a valid image path')
