@@ -44,7 +44,7 @@ def make_prediction(image_path, model_dir):
 	print("[INFO] loading model and label binarizer...")
 
 	# relative paths to the model and labels
-	model_path = os.path.join(model_dir, 'path_to_my_VGG_model.h5')
+	model_path = os.path.join(model_dir, 'trained_VGG_model.h5')
 	label_file_path = os.path.join(model_dir, 'labels')
 
 	# load the model and the label encoder
@@ -61,7 +61,7 @@ def make_prediction(image_path, model_dir):
 
 	# draw the class label + probability on the output image
 	text = "{}: {:.2f}%".format(label, pred_result[0][i] * 100)
-	cv2.putText(output, text, (5, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
+	cv2.putText(output, text, (5, 70), cv2.FONT_HERSHEY_SIMPLEX, 1.8, (0, 0, 255), 4)
 
 	# display the result on the screen
 	print("Predicted label {}: {:.2f}%".format(label, pred_result[0][i] * 100))
